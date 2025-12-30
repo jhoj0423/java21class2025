@@ -1,0 +1,23 @@
+package iFexample;
+
+import java.util.Scanner;
+
+public class ifEx01 {
+
+	public static void main(String[] args) {
+		// 
+		Scanner scan = new Scanner(System.in);
+		System.out.println("ID입력 : ");
+		int dbid = 1234;
+		dbid = scan.nextInt();
+		System.out.println("Pw입력 : ");
+		int dbPw = 1111;
+		dbPw = scan.nextInt();
+		if(dbid==1234 && dbPw == 1111) {
+			System.out.println("/n로그인 성공");
+		}else {
+			System.out.println("/n로그인 실패");
+		}
+	}
+
+}

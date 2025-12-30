@@ -1,0 +1,27 @@
+package iFexample;
+
+import java.util.Scanner;
+
+public class ifEx01 {
+
+	public static void main(String[] args) {
+		// dbid = "백구" 값이 저장된 힙메모리의 주소가 dbid에 존재하기 때문에 값을 직접비교할 수 없다.
+		// 이런경우 문자를 비교할때는 반드시 equals()메서드를 이용해서 힙메모리의 값을 직접 비교한다
+		//String은 객체 데이터 타입으로 dbid="백구" 값이 저장된 힙메모리의 주소가
+		Scanner scan = new Scanner(System.in);
+		System.out.print("ID입력 : ");
+		String dbid = "백구";
+		dbid = scan.next();
+		System.out.print("Pw입력 : ");
+		String dbPw = "황구";
+		dbPw = scan.next();
+		
+		//if(dbid.equals("백구") && dbPw.equals("황구")) =>같지 않는 경우 부정을 앞에 추가
+		if(dbid.equals("백구") && dbPw.equals("황구")) {
+			System.out.println("로그인 성공");
+		}else {
+			System.out.println("로그인 실패");
+		}
+	}
+
+}

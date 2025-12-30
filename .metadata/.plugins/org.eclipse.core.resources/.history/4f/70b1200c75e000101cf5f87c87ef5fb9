@@ -1,0 +1,13 @@
+package example;
+
+public class OperateEx02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int money = 178600;
+		boolean pay = money-money*(money/5000) >= 3000;
+		System.out.println(pay);
+		System.out.println(money/5000);
+	}
+
+}

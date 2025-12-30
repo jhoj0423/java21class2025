@@ -1,0 +1,13 @@
+package iFexample;
+
+import java.util.Scanner;
+
+public class ifEx06 {
+
+	public static void main(String[] args) {
+		// 
+		
+		
+	}
+
+}
