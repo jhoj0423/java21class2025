@@ -1,4 +1,4 @@
-package chapter03;
+package example;
 
 public class Whiletest {
 

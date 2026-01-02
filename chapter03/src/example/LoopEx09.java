@@ -1,4 +1,4 @@
-package chapter03;
+package example;
 
 import java.util.Scanner;
 
@@ -103,6 +103,7 @@ public class LoopEx09 {
 				run=false;
 			}
 		}//while문 종료
+		scan.close();
 	}
 
 }
