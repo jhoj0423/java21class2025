@@ -79,7 +79,7 @@ public class ArrayEx10 {
 						}
 					}
 				}else if(head>=3 && head<=7) {
-					int cnt = (head+1)/2; // 3=2 , 4=2, 5=3,6=3,7=4
+					int cnt = (head+1)/2; // 3=2, 4=2, 5=3, 6=3, 7=4 =>2자리씩 선택하는 횟수
 					int cnt2 = 0;
 					for(int i=1;i<=cnt;i++) {
 						System.out.printf("%n%d번째 좌석 번호를 선택[1~7] : ",i);
