@@ -1,9 +1,13 @@
 package bookMax;
 
+import java.text.DecimalFormat;
+
 public class BookDTO {
 	private String title;
 	private String name;
 	private int price;
+	
+	DecimalFormat num1 = new DecimalFormat("#,###");
 	
 	public BookDTO() {};
 	
@@ -33,7 +37,7 @@ public class BookDTO {
 	}
 	
 	public void showprint() {
-		System.out.printf("%n제목 : %s, 저자 : %s, 가격 %d원%n",getTitle(),getName(),getPrice());
+		System.out.printf("%n제목 : %s, 저자 : %s, 가격 %s원%n",getTitle(),getName(),num1.format(getPrice()));
 	}
 	
 	
