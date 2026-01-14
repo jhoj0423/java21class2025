@@ -49,8 +49,6 @@ public class Shooping extends UserMenu{
 						
 					}else{
 						//카테고리 번호가 menuSel인 제품 목록 출력
-						System.out.println(menuSel);
-						ItemManager.printItemList();
 						int num=0;
 						for(int i=0;i<10;i++) {
 							if(ItemManager.itemList.get(i).category.equals(ItemManager.category.get(0))) {
@@ -62,8 +60,8 @@ public class Shooping extends UserMenu{
 							}
 						}
 						
-//						System.out.println("항목을 선택 : ");
-//						int itemSel = scan.nextInt();
+						System.out.println("항목을 선택 : ");
+						int itemSel = scan.nextInt();
 //						if(itemSel>ItemManager.itemList.size()) {
 //							System.out.println("---해당 번호의 제품이 존재하지 않습니다.---");
 //						}else {

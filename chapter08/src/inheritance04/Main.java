@@ -18,7 +18,12 @@ public class Main {
 //		v.calcPrice(10000);
 //		v.vipPring(10000);
 		
-		
+		Customer g = new GoldCustomer("0300", "홍길동");
+		System.out.println("지불금액은 "+g.calcPrice(price)+"이고"+g.showCustomrtInfo());
+		Customer g2 = new GoldCustomer("0400","이율곡");
+		System.out.println("지불금액은 "+g2.calcPrice(price)+"이고"+g2.showCustomrtInfo());
+		System.out.println("=================================");
+		System.out.println();
 
 	}
 
