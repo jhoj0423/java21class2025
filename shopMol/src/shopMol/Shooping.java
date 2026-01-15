@@ -44,14 +44,14 @@ public class Shooping extends UserMenu{
 				if(shopSel==1) {
 					ItemManager.printCategory();
 					System.out.println("쇼핑목록 선택 [뒤로가기 -1] :");
-					int menuSel = scan.nextInt();
+					int menuSel = scan.nextInt(); // 0 ~~
 					if(menuSel == -1) {
 						
 					}else{
 						//카테고리 번호가 menuSel인 제품 목록 출력
-						int num=0;
-						for(int i=0;i<10;i++) {
-							if(ItemManager.itemList.get(i).category.equals(ItemManager.category.get(0))) {
+						int num=0; // 상품 앞자리 번호
+						for(int i=0;i<ItemManager.itemList.size();i++) {
+							if(ItemManager.itemList.get(i).category.equals(ItemManager.category.get(menuSel))) {
 								System.out.print("["+num+"]");
 								ItemManager.itemList.get(i).printInfo();
 								num++;
@@ -62,15 +62,21 @@ public class Shooping extends UserMenu{
 						
 						System.out.println("항목을 선택 : ");
 						int itemSel = scan.nextInt();
-//						if(itemSel>ItemManager.itemList.size()) {
-//							System.out.println("---해당 번호의 제품이 존재하지 않습니다.---");
-//						}else {
-//							super.jang[log][itemSel]++;
-//						}
+						if(ItemManager.itemList.get(itemSel).category.equals(ItemManager.category.get(menuSel))) {
+							jang[log][itemSel]++;
+						}else {
+							System.out.println("--- 선택한 제품이 목록에 존재하지 않습니다. ---");
+						}
 					}
 					
 				}else if(shopSel==2) {
-					
+					System.out.println("=========== 내 장바구니 ===========");
+					for(int i=0;i<jang[log].length;i++) {
+						if(jang[log][i] != 0) {
+							System.out.printf("[%s]항목 : %s,금액 : %d, 수량 : %d개%n",id[log],ItemManager.itemList.get(i).name,ItemManager.itemList.get(i).price,jang[log][i]);
+						}
+						
+					}
 				}else if(shopSel==0) {
 					shopping=false;
 				}
@@ -80,15 +86,16 @@ public class Shooping extends UserMenu{
 	//로그인 메서드
 	public void login() {
 		if(super.log== -1) {//로그아웃상태
-			System.out.println("ID입력 : ");
+			System.out.print("ID입력 : ");
 			String myId = scan.next();
-			System.out.println("PW입력 : ");
+			System.out.print("PW입력 : ");
 			String myPw = scan.next();
 			for(int i=0;i<super.id.length;i++) {
 				if(super.id[i].equals(myId) && super.pw[i].equals(myPw)) {
 					super.log=i;
 				}else if(super.id[i].equals("mmm") && super.pw[i].equals("111")) {
 					//관리자메뉴 실행
+					admin();
 				}
 			}
 			if(super.log!= -1) {
@@ -110,5 +117,12 @@ public class Shooping extends UserMenu{
 			super.log= -1;
 		}
 	};
-
+	// 관리자 메뉴
+	public void admin() {
+		boolean adminrun = true;
+		
+		while(adminrun) {
+			
+		}
+	}
 }

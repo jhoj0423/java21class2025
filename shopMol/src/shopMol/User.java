@@ -9,18 +9,16 @@ public class User {
 	String [] id= {"kkk","ccc","ddd","eee","fff"};
 	String [] pw= {"111","222","333","444","555"};
 	int log = -1; // 로그아웃
-	int cartCount = 0;
+	int cartCount = 100;
 	int[][] jang = new int[id.length][cartCount]; //유저의 장바구니
-	int[][] cart = new int[100][2]; //관리자의 장바구니 리스트
+	//int[][] cart = new int[100][2]; //관리자의 장바구니 리스트
 	 
 	//디폴트
 	public User () {
-		for(Item i :itemList) {
-			cartCount++;
-		}
+		
 	};
 	
-	public User (String [] id,String [] pw, int log) {
+	public User (String [] id,String [] pw, int log, int cartCount) {
 		this.id =id;
 		this.pw=pw;
 		this.log=log;

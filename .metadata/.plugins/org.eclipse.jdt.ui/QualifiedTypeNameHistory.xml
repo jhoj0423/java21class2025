@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -32,10 +29,8 @@
     <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
     <fullyQualifiedTypeName name="java.security.cert.CollectionCertStoreParameters"/>
     <fullyQualifiedTypeName name="shopMol.UserMenu"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="shopMol.ItemManager"/>
     <fullyQualifiedTypeName name="omok.GameElements"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="otomok.GameElements"/>
     <fullyQualifiedTypeName name="polymorphism.Animal"/>
     <fullyQualifiedTypeName name="polymorphism.Human"/>
@@ -43,4 +38,26 @@
     <fullyQualifiedTypeName name="polymorphism.Eagle"/>
     <fullyQualifiedTypeName name="inheritance04.Customer"/>
     <fullyQualifiedTypeName name="inheritance04.GoldCustomer"/>
+    <fullyQualifiedTypeName name="abstractTest.Computer"/>
+    <fullyQualifiedTypeName name="abstractTest.NoteBook"/>
+    <fullyQualifiedTypeName name="abstractTest.define"/>
+    <fullyQualifiedTypeName name="interfaceTest.Calculater"/>
+    <fullyQualifiedTypeName name="interfaceTest.Calc"/>
+    <fullyQualifiedTypeName name="interfaceTest.ComoleteCalc"/>
+    <fullyQualifiedTypeName name="schedluer.Schedluer"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="schedluer.RoundRobin"/>
+    <fullyQualifiedTypeName name="schedluer.PriorityAllocation"/>
+    <fullyQualifiedTypeName name="schedluer.LeastJob"/>
+    <fullyQualifiedTypeName name="interfaceTest02.Customer"/>
+    <fullyQualifiedTypeName name="interfaceTest02.Buy"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="queInterface.Queue"/>
+    <fullyQualifiedTypeName name="queInterface.Shelf"/>
+    <fullyQualifiedTypeName name="interfaceExample01.Buyable"/>
+    <fullyQualifiedTypeName name="interfaceExample01.Television"/>
+    <fullyQualifiedTypeName name="interfaceExample01.Refrigerator"/>
+    <fullyQualifiedTypeName name="interfaceExample02.Animal"/>
+    <fullyQualifiedTypeName name="interfaceExample03.Shape"/>
+    <fullyQualifiedTypeName name="interfaceExample03.Circle"/>
 </qualifiedTypeNameHistroy>
