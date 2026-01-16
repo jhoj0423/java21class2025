@@ -120,9 +120,50 @@ public class Shooping extends UserMenu{
 	// 관리자 메뉴
 	public void admin() {
 		boolean adminrun = true;
-		
+		System.out.println("당신은 관리자 입니다.");
 		while(adminrun) {
-			
+			System.out.println("[1]로그아웃");
+			System.out.println("[2][아이템관리]");
+			System.out.println("[3][장바구니리스트]\n");
+			System.out.print("메뉴 선택 : ");
+			int adSel = scan.nextInt();
+			if(adSel==1) {
+				
+			}else if(adSel==2) {
+				
+			}else if(adSel==3) {
+				
+			}else {
+				
+			}
 		}
 	}
+	//아이템 관리 메서드
+	
+	//장바구니리스트 메서드
+	
+	// 아이템 추가 메서드
+	
+	// 아이템 삭제 메서드
+	
+	// 아이템 수정 메서드
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
