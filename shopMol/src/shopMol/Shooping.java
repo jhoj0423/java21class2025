@@ -93,13 +93,17 @@ public class Shooping extends UserMenu{
 			for(int i=0;i<super.id.length;i++) {
 				if(super.id[i].equals(myId) && super.pw[i].equals(myPw)) {
 					super.log=i;
+					System.out.println("shk");
 				}else if(super.id[i].equals("mmm") && super.pw[i].equals("111")) {
 					//관리자메뉴 실행
-					admin();
+					super.log = -2;
+					System.out.println("shk");
 				}
 			}
 			if(super.log!= -1) {
 				System.out.println("["+super.id[super.log]+"]님, 환영합니다.");
+			}else if(super.log!= -2){
+				admin();
 			}else {
 				System.out.println("아이디와 비밀번호를 다시 확인해주세요.");
 			}
@@ -110,7 +114,7 @@ public class Shooping extends UserMenu{
 	};
 	//로그아웃 메서드
 	public void logout(){
-		if(super.log!= -1) {
+		if(super.log== -1) {
 			System.out.println("-----이미 로그아웃 중인 상태입니다.------");
 		}else {
 			System.out.println("-----안녕히계세요.------");
@@ -128,25 +132,100 @@ public class Shooping extends UserMenu{
 			System.out.print("메뉴 선택 : ");
 			int adSel = scan.nextInt();
 			if(adSel==1) {
-				
+				adminrun=false;
 			}else if(adSel==2) {
-				
+				ItemManagement();
 			}else if(adSel==3) {
-				
+				List();
 			}else {
-				
+				System.out.println("[1~3]번 메뉴중에 선택해 주세요");
 			}
 		}
 	}
 	//아이템 관리 메서드
-	
+	public void ItemManagement() {
+		while(true) {
+			System.out.println("[1][item 추가]");
+			System.out.println("[2][item 삭제]");
+			System.out.println("[3][item 수정]");
+			System.out.println("[0][종료]\n");
+			System.out.print("메뉴 선택 : ");
+			int ManagerSel = scan.nextInt();
+			
+			if(ManagerSel==1) {
+				AddItem();
+			}else if(ManagerSel==2) {
+				RemoveItem();
+			}else if(ManagerSel==3) {
+				ItemChange();
+			}else if(ManagerSel==0) {
+				System.out.println("아이템 관리 종료");
+				break;
+			}else {
+				System.out.println("[0~3]번 메뉴중에 선택해 주세요");
+			}
+		}
+	}
 	//장바구니리스트 메서드
-	
+	public void List() {
+		
+	}
 	// 아이템 추가 메서드
+	public void AddItem() {
+		System.out.println("추가할 item 이름을 입력하세요");
+		String pulsItem = scan.next();
+		System.out.println("추가할 item 가격을 입력하세요");
+		int plusPrice = scan.nextInt();
+		System.out.println("추가할 item의 category번호를 입력하세요");
+		System.out.println("[0]과자 [1]생선 [2]육류 [3]음료수");
+		int plusCategoty = scan.nextInt();
+		ItemManager.itemList.add(new Item(pulsItem,plusPrice,ItemManager.category.get(plusCategoty)));
+		int num=0; // 상품 앞자리 번호
+		for(int i=0;i<ItemManager.itemList.size();i++) {
+			System.out.print("["+num+"]");
+			ItemManager.itemList.get(i).printInfo();
+			num++;
+		}
+	}
 	
 	// 아이템 삭제 메서드
+	public void RemoveItem() {
+		System.out.println("삭제할 item 번호을 입력하세요");
+		int removeItem = scan.nextInt();
+		ItemManager.itemList.remove(removeItem);
+		int num=0; // 상품 앞자리 번호
+		for(int i=0;i<ItemManager.itemList.size();i++) {
+			System.out.print("["+num+"]");
+			ItemManager.itemList.get(i).printInfo();
+			num++;
+		}
+	}
 	
 	// 아이템 수정 메서드
+	public void ItemChange() {
+		System.out.println("수정할 item 번호를 입력하세요");
+		int itemNum = scan.nextInt();
+		String itemCategory = ItemManager.category.get(itemNum);
+		System.out.println("수정할 item 이름를 입력하세요");
+		System.out.println("[item 금액만 수정할때 item 이름은 기존그대로 입력하세요]");
+		String itemName = scan.next();
+		 
+		System.out.println("수정할 item 금액를 입력하세요");
+		System.out.println("[item 이름만 수정할때 item 금액은 기존그대로 입력하세요]");
+		int itemPrice = scan.nextInt();
+		
+		//ItemManager.itemList.remove(itemNum);
+		//ItemManager.itemList.add(itemPrice, new Item(itemName,itemPrice,itemCategory));;
+		
+		ItemManager.itemList.add(itemPrice, new Item(itemName,itemPrice,itemCategory));
+		
+		int num=0; // 상품 앞자리 번호
+		for(int i=0;i<ItemManager.itemList.size();i++) {
+			System.out.print("["+num+"]");
+			ItemManager.itemList.get(i).printInfo();
+			num++;
+		}
+	}
 	
 	
 	
