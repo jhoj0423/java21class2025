@@ -40,7 +40,7 @@ public class ItemManager {
 		addItem("콜라",1000,category.get(3));
 		addItem("사이다",1500,category.get(3));
 		addItem("새우",1800,category.get(1));
-		addItem("양파링",200,category.get(0));
+		addItem("양파링",2000,category.get(0));
 	}
 	
 	//카테고리 출력 메소드
@@ -53,7 +53,7 @@ public class ItemManager {
 	// item 목록 출력 메소드
 	public void printItemList() {
 		for(int i=0;i<itemList.size();i++) {
-			System.out.print("\n["+i+"]");
+			System.out.print("["+i+"]");
 			itemList.get(i).PrintInfo();
 		}
 	}
@@ -79,16 +79,17 @@ public class ItemManager {
 					if(jang.get(j).itemName.equals(itemList.get(itemId).name) &&
 							jang.get(j).userId.equals(user.id[log])) {
 						jang.get(j).Quantity++;
-						jang.get(j).price = jang.get(i).price * jang.get(j).Quantity;
+						jang.get(j).price += jang.get(i).price;
+						jangcnt++;
 					}
 				}
-			}
-			if(jangcnt==0) { // 중복 없을때
-				temp.itemName=itemList.get(i).name;
-				temp.price = itemList.get(i).price;
-				cnt+=1;
-				temp.Quantity = cnt;
-				jang.add(temp);
+				if(jangcnt==0) { // 중복 없을때
+					temp.itemName=itemList.get(i).name;
+					temp.price = itemList.get(i).price;
+					cnt+=1;
+					temp.Quantity = cnt;
+					jang.add(temp);
+				}
 			}
 		}
 		
